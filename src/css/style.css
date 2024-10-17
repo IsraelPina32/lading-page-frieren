@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+body { 
+    background-color: var(--dark);
+    font-family: "Poppins", sans-serif;
+}
+
+body::before {
+    content: '';
+    background: url('../img/walpaper.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;   
+}
+
+.header {
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header .title {
+    color: var(--gold);
+    font-family: "Playwrite GB S", cursive;
+    text-transform: uppercase;
+    font-size: 3rem;
+    padding: 1rem;
+    line-height: 4rem;
+}
+
+.characters-selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.characters-selection .character-selected {
+    text-align: center;
+    height: 70vh;
+    width: 30%;
+    position: relative;
+
+}
+
+.characters-selection .character-selected img {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    transform: translate(-50%, -50%);
+}
+
+.characters-selection .character-selected .name::before {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 50%;
+    left: 25%;
+    right: 30%;
+    bottom: 94%;
+    border-radius: 5%;
+}
+
+.characters-selection .character-selected .name h2 {
+    font-size: 2rem;
+    color: var(--gold);
+    position: absolute;
+    width: 100%;
+}
+
+.characters-selection .character-selected.character-player-1 .name::before {
+    background-color: var(--red-light);
+}
+
+.characters-selection .character-selected.character-selected.character-player-2 .name::before {
+    background-color: var(--green-dark);
+}
+
+.characters-selection .list-of-characters {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.characters-selection .list-of-characters  .character {
+     cursor: pointer;
+     border: 3px solid var(--gold);
+     background-color: var(--white-gray);
+     width: 30%;
+     height: 160px;
+     z-index: 2;
+     border-radius: 5%;
+     position: relative;
+     transition: 0.15s ease-in-out;
+} 
+
+.characters-selection .list-of-characters .character img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+.characters-selection .list-of-characters .character.select {
+    border: 1px solid var(--gold);
+    animation: c-glowing-blue 0.3s ease-in-out infinite alternate;
+}
+
+.characters-selection .list-of-characters .character:hover {
+    animation: c-glowing-blue 0.3s ease-in-out infinite alternate;
+    border: 3px solid var(--purple); 
+    background-color: var(--green-dark);
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.characters-selection .list-of-characters .character.player-2-selected {
+    animation: c-glowing-red 0.3s ease-in-out infinite alternate;
+}
+
+.characters-selection .list-of-characters .character .tag {
+    position: absolute;
+    font-size: 1rem;
+    top: 2%;
+    left: 5%;
+    color: var(--dark);
+    animation: alternate;
+}

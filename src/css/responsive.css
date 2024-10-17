@@ -1,0 +1,53 @@
+@media (max-width: 1280px) {
+    .characters-selection .list-of-characters {
+        max-width: 300px;
+    }
+
+    .characters-selection .list-of-characters .character {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+        body::before {
+            background: url('../img/walpaper-mobile.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+            opacity: 1;
+        }
+
+        main {
+            justify-content: start;
+            padding: 0 1rem;
+        }
+
+        .header .title {
+            font-size: 1.5rem;
+        }
+
+        .characters-selection .character-selected .name::before {
+            bottom: 93%;
+        }
+
+        .characters-selection .character-selected img {
+            width: 250px;
+            height: 100%;
+            padding: 1rem;
+        }
+}
+
+@media (max-width: 600px) {
+    .characters-selection .character-selected {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 320px) {
+    .header .title {
+        font-size: 1rem;
+    }
+}
